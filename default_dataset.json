@@ -1,0 +1,7 @@
+{
+  "monomer_weight": {"A1": 78.01, "A2": 83.94, "A3": 89.88, "C1": 138.99, "C2": 144.92, "C3": 150.86, "C4": 156.79},
+  "polymer_weight": [699],
+  "range_bottom": 2,
+  "range_top": 7,
+  "error_number": 3
+}
