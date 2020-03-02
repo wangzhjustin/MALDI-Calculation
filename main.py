@@ -54,13 +54,11 @@ class MolecularWeight:
         return result
 
     def main(self):
-        results = []
         combinations = self.combinations_generator()
         for combination in combinations:
             result = self.result_calculator(combination)
             if result:
-                results.append(result)
-        print (results)
+                print(result)
 
 
 MolecularWeight()
