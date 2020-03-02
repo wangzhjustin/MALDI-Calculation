@@ -34,7 +34,6 @@ class MolecularWeight:
 
     def use_iter(self, range_num):
         product_list = list(itertools.product(self.monomer_weight_keys, repeat=range_num))
-        print(product_list)
         return product_list
 
     def combinations_generator(self):
