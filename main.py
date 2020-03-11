@@ -5,7 +5,7 @@ import json
 class MolecularWeight:
 
     def __init__(self):
-        filename = raw_input("Enter filename: ")
+        filename = input("Enter filename: ")
         if filename:
             datastore = self.load_file(filename)
         else:
