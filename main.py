@@ -11,6 +11,8 @@ class MolecularWeight:
         else:
             datastore = self.load_file("default_dataset.json")
         self.monomer_weight = datastore["monomer_weight"]
+        self.monomer_charge = datastore["monomer_charge"]
+        self.polymer_charge = datastore["polymer_charge"]
         self.monomer_weight_keys = self.monomer_weight.keys()
         self.polymer_weight = datastore["polymer_weight"]
         self.range_bottom = datastore["range_bottom"]
@@ -23,11 +25,11 @@ class MolecularWeight:
             datastore = json.load(f)
             return datastore
 
-    def check_list(self, number, final_alpha):
+    def check_list(self, number, final_alpha, final_charge):
         result = {}
         for monomer_weight_num in self.polymer_weight:
-            if abs(monomer_weight_num - number) < self.error_number:
-                result[number] = final_alpha
+            if abs(monomer_weight_num - number) < self.error_number and final_charge in self.polymer_charge:
+                result[round(number, 2)] = (final_alpha, final_charge)
                 return result
             else:
                 pass
@@ -45,12 +47,14 @@ class MolecularWeight:
 
     def result_calculator(self, combination):
         final_value = 0
+        final_charge = 0
         final_alpha = ""
         for item in combination:
             value = self.monomer_weight[item]
             final_value += value
+            final_charge += self.monomer_charge[item]
             final_alpha += item
-        result = self.check_list(final_value, final_alpha)
+        result = self.check_list(final_value, final_alpha, final_charge)
         return result
 
     def main(self):

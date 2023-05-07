@@ -1,7 +1,9 @@
 {
-  "monomer_weight": {"A1": 78.01, "A2": 83.94, "A3": 89.88, "C1": 138.99, "C2": 144.92, "C3": 150.86, "C4": 156.79},
-  "polymer_weight": [699],
+  "monomer_weight": {"Al": 26.98, "A1": 88.21, "A2": 87.20, "A3": 160.39, "NH2": 16.02, "NH": 15.01, "Cl": 35.45, "THF": 72.11, "Ag": 107.87},
+  "monomer_charge": {"Al": 3, "A1": -1, "A2": -2, "A3": -1, "NH2": -1, "NH": -2, "Cl": -1, "THF": 0, "Ag": 1},
+  "polymer_weight": [473],
+  "polymer_charge": [1, -1],
   "range_bottom": 2,
   "range_top": 7,
-  "error_number": 3
+  "error_number": 2
 }
